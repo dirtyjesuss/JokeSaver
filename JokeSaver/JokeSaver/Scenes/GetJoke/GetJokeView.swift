@@ -56,6 +56,13 @@ class GetJokeView: UIView, ActionConfigurable {
         return stackView
     }()
 
+    private var loadingView: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(style: .medium)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
+        return view
+    }()
+
     // MARK: - Init
 
     override init(frame: CGRect) {
@@ -77,10 +84,25 @@ class GetJokeView: UIView, ActionConfigurable {
         categoryLabel.text = "Category: \(model.category ?? "")"
     }
 
+    func startLoading() {
+        clearLabels()
+        loadingView.isHidden = false
+        loadingView.startAnimating()
+    }
+
+    func stopLoading() {
+        guard loadingView.isAnimating else {
+            return
+        }
+
+        loadingView.stopAnimating()
+        loadingView.isHidden = true
+    }
+
     // MARK: - Private methods
 
     private func setupStyle() {
-        backgroundColor = .white
+        backgroundColor = .systemBackground
     }
 
     private func setupSubviews() {
@@ -90,6 +112,7 @@ class GetJokeView: UIView, ActionConfigurable {
 
         addSubview(stackView)
         addSubview(getJokeButton)
+        addSubview(loadingView)
     }
 
     private func setupConstraints() {
@@ -100,8 +123,16 @@ class GetJokeView: UIView, ActionConfigurable {
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
             getJokeButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
             getJokeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
-            getJokeButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40)
+            getJokeButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40),
+            loadingView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            loadingView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
+    }
+
+    private func clearLabels() {
+        mainLabel.text = nil
+        additionalLabel.text = nil
+        categoryLabel.text = nil
     }
 
     // MARK: - Actions

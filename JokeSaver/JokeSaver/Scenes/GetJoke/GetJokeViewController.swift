@@ -26,6 +26,7 @@ class GetJokeViewController: UIViewController {
         title = "JOKE"
 
         getJokeView?.action = { [weak self] in
+            self?.getJokeView?.startLoading()
             self?.jokeService.getJoke { result in
                 switch result {
                 case .success(let joke):
@@ -35,9 +36,13 @@ class GetJokeViewController: UIViewController {
                             additionalText: joke.delivery,
                             category: joke.category
                         ))
+                        self?.getJokeView?.stopLoading()
                     }
 
                 case .failure(let error):
+                    DispatchQueue.main.async {
+                        self?.getJokeView?.stopLoading()
+                    }
                     print(error.localizedDescription)
                 }
             }
