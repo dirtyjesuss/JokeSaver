@@ -13,6 +13,10 @@
 		ED616C8527983B5200C2CDF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED616C8327983B5200C2CDF9 /* LaunchScreen.storyboard */; };
 		ED616C8E27983C4100C2CDF9 /* JokesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616C8D27983C4100C2CDF9 /* JokesService.swift */; };
 		ED616C9127983CAF00C2CDF9 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616C9027983CAF00C2CDF9 /* Joke.swift */; };
+		ED616C952798441900C2CDF9 /* GetJokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616C942798441900C2CDF9 /* GetJokeViewController.swift */; };
+		ED616C972798443600C2CDF9 /* GetJokeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616C962798443600C2CDF9 /* GetJokeView.swift */; };
+		ED616C9A2798B03800C2CDF9 /* ActionConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616C992798B03800C2CDF9 /* ActionConfigurable.swift */; };
+		ED616C9C2798B42C00C2CDF9 /* JokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED616C9B2798B42C00C2CDF9 /* JokeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		ED616C8627983B5200C2CDF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED616C8D27983C4100C2CDF9 /* JokesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesService.swift; sourceTree = "<group>"; };
 		ED616C9027983CAF00C2CDF9 /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
+		ED616C942798441900C2CDF9 /* GetJokeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetJokeViewController.swift; sourceTree = "<group>"; };
+		ED616C962798443600C2CDF9 /* GetJokeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetJokeView.swift; sourceTree = "<group>"; };
+		ED616C992798B03800C2CDF9 /* ActionConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionConfigurable.swift; sourceTree = "<group>"; };
+		ED616C9B2798B42C00C2CDF9 /* JokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,8 @@
 		ED616C7727983B4F00C2CDF9 /* JokeSaver */ = {
 			isa = PBXGroup;
 			children = (
+				ED616C982798B02700C2CDF9 /* Helper */,
+				ED616C922798437F00C2CDF9 /* Scenes */,
 				ED616C8F27983C6A00C2CDF9 /* Model */,
 				ED616C8C27983BCE00C2CDF9 /* Service */,
 				ED616C7827983B4F00C2CDF9 /* AppDelegate.swift */,
@@ -79,8 +89,34 @@
 			isa = PBXGroup;
 			children = (
 				ED616C9027983CAF00C2CDF9 /* Joke.swift */,
+				ED616C9B2798B42C00C2CDF9 /* JokeViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		ED616C922798437F00C2CDF9 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				ED616C93279843EA00C2CDF9 /* GetJoke */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		ED616C93279843EA00C2CDF9 /* GetJoke */ = {
+			isa = PBXGroup;
+			children = (
+				ED616C942798441900C2CDF9 /* GetJokeViewController.swift */,
+				ED616C962798443600C2CDF9 /* GetJokeView.swift */,
+			);
+			path = GetJoke;
+			sourceTree = "<group>";
+		};
+		ED616C982798B02700C2CDF9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				ED616C992798B03800C2CDF9 /* ActionConfigurable.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,7 +191,11 @@
 				ED616C7927983B4F00C2CDF9 /* AppDelegate.swift in Sources */,
 				ED616C7B27983B4F00C2CDF9 /* SceneDelegate.swift in Sources */,
 				ED616C9127983CAF00C2CDF9 /* Joke.swift in Sources */,
+				ED616C9C2798B42C00C2CDF9 /* JokeViewModel.swift in Sources */,
+				ED616C952798441900C2CDF9 /* GetJokeViewController.swift in Sources */,
+				ED616C972798443600C2CDF9 /* GetJokeView.swift in Sources */,
 				ED616C8E27983C4100C2CDF9 /* JokesService.swift in Sources */,
+				ED616C9A2798B03800C2CDF9 /* ActionConfigurable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

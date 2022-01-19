@@ -28,7 +28,7 @@ final class JokesServiceImp: JokesService {
     // MARK: JokesService methods
 
     func getJoke(completion: @escaping JokeRequestCompletion) {
-        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             guard let self = self else {
                 return
             }
@@ -50,6 +50,7 @@ final class JokesServiceImp: JokesService {
             }
 
         }
+        task.resume()
     }
 
     // MARK: - Private methods

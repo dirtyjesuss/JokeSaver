@@ -25,6 +25,11 @@ struct Joke: Decodable {
         let explicit: Bool
     }
 
+    enum CodingKeys: String, CodingKey {
+        case id, category, type, flags,
+             joke, setup, delivery
+    }
+
     // MARK: - Fields
 
     let id: Int
@@ -38,4 +43,15 @@ struct Joke: Decodable {
     // For two part joke
     let setup: String?
     let delivery: String?
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(Int.self, forKey: .id)
+        category = try container.decode(String.self, forKey: .category)
+        type = try container.decode(JokeType.self, forKey: .type)
+        flags = try container.decode(Flags.self, forKey: .flags)
+        joke = try? container.decode(String?.self, forKey: .joke)
+        setup = try? container.decode(String?.self, forKey: .setup)
+        delivery = try? container.decode(String?.self, forKey: .delivery)
+    }
 }
