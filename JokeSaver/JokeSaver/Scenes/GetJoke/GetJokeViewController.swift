@@ -23,7 +23,7 @@ class GetJokeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "JOKE"
+        title = "Joke Saver"
 
         getJokeView?.action = { [weak self] in
             self?.getJokeView?.startLoading()
