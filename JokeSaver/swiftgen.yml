@@ -1,0 +1,5 @@
+fonts:
+  inputs: ${SRCROOT}/JokeSaver/Resources/Fonts/
+  outputs:
+    templateName: swift5
+    output: ${SRCROOT}/JokeSaver/Generated/Fonts.swift
